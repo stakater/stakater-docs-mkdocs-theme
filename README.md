@@ -3,7 +3,16 @@ Stakater documentation MkDocs theme common resources
 
 ## How to use
 
-Import this git submodule into your target docs project. 
+Import this git submodule into your target docs project by running the follow command:
+```bash
+git submodule add https://github.com/stakater/stakater-docs-mkdocs-theme.git th
+eme_common
+```
+OR by adding a specific branch:
+```bash
+git submodule add -b whichGitBranch https://github.com/stakater/stakater-docs-mkdocs-theme.git th
+eme_common
+```
 
 Then, run the scripts in `scripts` folder in your target project root as below:
 
