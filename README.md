@@ -14,6 +14,11 @@ git submodule add -b whichGitBranch https://github.com/stakater/stakater-docs-mk
 eme_common
 ```
 
+> Note: If you project already have this as a git submodule, you can take an update by running this command:
+```bash
+git submodule update --init --recursive --remote
+```
+
 Then, run the scripts in `scripts` folder in your target project root as below:
 
 ```bash
