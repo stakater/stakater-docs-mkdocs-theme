@@ -1,0 +1,76 @@
+site_name: Stakater Docs
+docs_dir: content
+site_url: null
+repo_url: null
+edit_uri: blob/main/content/
+use_directory_urls: false
+extra_css:
+    - stylesheets/extra.css
+theme:
+    name: material
+    font:
+      text: Montserrat
+      code: Montserrat Mono
+    custom_dir: dist/_theme
+    logo: assets/images/favicon.svg
+    favicon: assets/images/favicon.svg
+    palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        name: Switch to system preference
+        icon: material/brightness-auto
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        name: Switch to light mode
+        icon: material/brightness-7
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        name: Switch to dark mode
+        icon: material/brightness-3
+    features:
+        - content.code.copy
+        - navigation.tracking
+        - toc.follow
+        - toc.integrate
+        - navigation.top
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.emoji:
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - toc:
+      permalink: "#"
+extra:
+    analytics:
+        provider: google
+        property: G-TTH1YYW5TX
+    consent:
+        title: Cookie consent
+        actions:
+            - accept
+            - reject
+            - manage
+        description: >-
+            We use cookies to recognize your repeated visits and preferences, as well
+            as to measure the effectiveness of our documentation and whether users
+            find what they're searching for. With your consent, you're helping us to
+            make our documentation better.
+    version:
+        provider: mike
+        default: latest
+plugins:
+    - search
+    - mermaid2
+    - glightbox
+
+nav:
