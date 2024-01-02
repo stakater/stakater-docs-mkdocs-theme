@@ -21,10 +21,15 @@ git submodule update --init --recursive --remote
 
 Then, run the scripts in `scripts` folder in your target project root as below:
 
+To install the python dependencies comming from this project:
+```bash
+pip3 install -r theme_common/requirements.txt
+```
+To combine the theme resources in target project:
 ```bash
 python theme_common/scripts/combine_theme_resources.py theme_common/resources theme_override/resources dist/_theme
 ```
-
+To produce a common mkdocs.yml file in target project:
 ```bash
 python theme_common/scripts/combine_mkdocs_config_yaml.py theme_common/mkdocs.yml theme_override/mkdocs.yml mkdocs.yml
 ```
