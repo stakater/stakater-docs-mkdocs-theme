@@ -18,7 +18,7 @@ theme:
   cloud_security_alliance_logo_light: assets/images/CSA_light.png
   hippa_compliant_logo_dark: assets/images/HC_dark.png
   hippa_compliant_logo_light: assets/images/HC_light.png
-  favicon: assets/images/favicon.svg
+  favicon: assets/images/logo-light.png
 
   palette:
     - media: "(prefers-color-scheme)"
