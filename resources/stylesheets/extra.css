@@ -24,6 +24,13 @@
     .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
         font-weight: 600;
     }
+
+    .md-nav__title {
+        font-size: 0.8rem;
+    }
+    .md-nav__link {
+        font-size: 0.8rem;
+    }
 }
 
 
@@ -70,6 +77,9 @@
         color: #fff;
     }
 
+    .md-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
     .md-header__topic{
         display: flex;
         justify-content: center;
@@ -113,6 +123,7 @@
         font-size: 14px; 
         font-weight: 400; 
     }
+
     
     .md-footer{
         background-color: #131414;
@@ -136,7 +147,7 @@
     }
 
     .vertical-divider {
-        margin: 0 3rem; display: flex; align-items: center; cursor: none; color: #fff;
+        margin: 0 1rem; display: flex; align-items: center; cursor: none; color: #fff;
     }
 }
 
@@ -181,6 +192,9 @@
         color: #282523;
     }
     
+    .md-header {
+        border-bottom: 1px solid rgba(23, 25, 28, 0.2);
+    }
     .md-header__topic{
         display: flex;
         justify-content: center;
@@ -223,6 +237,8 @@
         font-weight: 400; 
     }
 
+    
+
     .md-footer{
         background-color: white;
         border-top: 1px solid rgba(0, 0, 0, 0.2);
@@ -245,6 +261,6 @@
     }
 
     .vertical-divider {
-        margin: 0 3rem; display: flex; align-items: center; cursor: none; color: black;
+        margin: 0 1rem; display: flex; align-items: center; cursor: none; color: black;
     }
 }

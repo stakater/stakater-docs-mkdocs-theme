@@ -15,6 +15,10 @@
         display: flex;
     }
 
+    .jscfs {
+        justify-content: flex-start;
+    }
+
     .jscc {
         justify-content: center;
     }
@@ -44,8 +48,16 @@
         flex: 2;
     }
 
+    .flex-3 {
+        flex: 3;
+    }
+
     .flex-0-8 {
         flex: 0.8;
+    }
+
+    .margin-left-1 {
+        margin-left: 1rem;
     }
 
     .margin-bottom-16 {
@@ -54,7 +66,7 @@
 
     .footer-content-container {
         width: 100%;
-        margin: 0 5%;
+        margin: 0 14%;
     }
 </style>
 
@@ -259,14 +271,33 @@
             <!-- Copy Rights and Social Media Links -->
             <div class="display-flex jscsb">
                 <!-- Column 1 -->
-                <div class="flex-0-8">
-                    <p class="md-footer-base-content">
-                        <b>
-                            © 2023 Stakater.com
-                        </b>
-                    </p>
+                <div class="flex-3">
+                    <div class="display-flex jscfs items-center">
+                        <div>
+                            <p class="md-footer-base-content">
+                                <b>
+                                    © 2023 Stakater.com
+                                </b>
+                            </p>
+                        </div>
+                        <div class="display-flex margin-left-1">
+                            <a href="https://www.stakater.com/privacy-policy" class="md-footer-base-content">
+                                <b>
+                                    Privacy Policy
+                                </b>
+                            </a>
+                            <p class="vertical-divider">
+                                |
+                            </p>
+                            <a href="https://www.stakater.com/terms-of-use" class="md-footer-base-content">
+                                <b>
+                                    Terms of Use
+                                </b>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="display-flex flex-1">
+                <!-- <div class="display-flex flex-1">
                     <div class="display-flex jscc items-center">
                         <a href="https://www.stakater.com/privacy-policy" class="md-footer-base-content">
                             <b>
@@ -282,9 +313,9 @@
                             </b>
                         </a>
                     </div>
-                </div>
-                <div class="flex-1"></div>
-                <div class="flex-1"></div>
+                </div> -->
+                <!-- <div class="flex-1"></div>
+                <div class="flex-1"></div> -->
                 <div class="flex-1">
                     <!-- Social Links -->
                     <div class="display-flex jscsa">
