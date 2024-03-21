@@ -15,9 +15,24 @@
     .md-typeset .note>.admonition-title, .md-typeset .note>summary {
         background-color: #ef7c3030;
     }
+    
     /* search results 'see more' text */
     .md-search-result__more>summary>div {
         color: #EF7C30;
+    }
+    .md-search {
+        width: auto;
+    }
+    .md-search__form {
+        background-color: transparent;
+        border-radius: 6px;
+        border: 1px solid rgba(23, 25, 28, 0.4);
+    }
+    .md-search__input {
+        width: 100%;
+    }
+    .md-search__inner {
+        width: 8rem;
     }
 
     /* font weights for headings*/

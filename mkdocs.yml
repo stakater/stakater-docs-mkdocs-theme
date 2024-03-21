@@ -11,6 +11,7 @@ theme:
   font:
     text: Space Grotex
     code: Space Grotex
+    # To add custom stylesheet to _theme and acts as a build-directory path resolver
   custom_dir: dist/_theme
   logo_light: assets/images/logo-light.png
   logo_dark: assets/images/logo-dark.png
@@ -51,8 +52,8 @@ markdown_extensions:
   - pymdownx.superfences
   - attr_list
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - toc:
       permalink: "#"
       title: On this page
