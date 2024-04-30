@@ -79,7 +79,6 @@ extra:
       make our documentation better.
 plugins:
   - search
-  - mermaid2
   - glightbox
 
 nav:
