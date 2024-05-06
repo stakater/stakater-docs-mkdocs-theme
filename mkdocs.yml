@@ -9,8 +9,8 @@ extra_css:
 theme:
   name: material
   font:
-    text: Montserrat
-    code: Montserrat Mono
+    text: Space Grotex
+    code: Space Grotex
     # To add custom stylesheet to _theme and acts as a build-directory path resolver
   custom_dir: dist/_theme
   logo_light: assets/images/logo-light.png
