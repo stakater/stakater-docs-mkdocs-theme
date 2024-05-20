@@ -51,7 +51,9 @@
           <img class="md-header__logo_dark" src="{{ config.theme.logo_dark | url }}#only-dark" alt="logo" />
           {% endif %}
           {% if config.site_name %}
-          <h5 style="color: black">{{ config.site_name }}</h5>
+          <div class="header-site-name">
+            <h5 class="site-name-text">{{ config.site_name }}</h5>
+          </div>
           {% endif %}
         </div>
         <!-- Topic -->
