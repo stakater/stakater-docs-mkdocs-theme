@@ -15,6 +15,8 @@ theme:
   custom_dir: dist/_theme
   logo_light: assets/images/logo-light.png
   logo_dark: assets/images/logo-dark.png
+  footer_logo_light: assets/images/footer-logo-light.png
+  footer_logo_dark: assets/images/footer-logo-dark.png
   cloud_security_alliance_logo_dark: assets/images/CSA_dark.png
   cloud_security_alliance_logo_light: assets/images/CSA_light.png
   hippa_compliant_logo_dark: assets/images/HC_dark.png
