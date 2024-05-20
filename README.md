@@ -102,7 +102,7 @@ Your target project will now have an mkdocs theme. If you want to customise `mkd
 
 Your Dockerfile in the target repo needs to run the same steps to build the combined theme that will be used to build the docs.
 
-Versioning is provided by theme_override and can be added to the mkdocs.yml when required under:
+Versioning is provided by `theme_override` and can be added to the `mkdocs.yml` when required under:
 
 ```extra:
     version:
