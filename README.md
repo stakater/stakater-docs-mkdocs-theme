@@ -110,4 +110,4 @@ Versioning is provided by theme_override and can be added to the mkdocs.yml when
         default: latest
 ```
 
-It is compiled under the the `dist/_theme`
+It is compiled under the `dist/_theme`
