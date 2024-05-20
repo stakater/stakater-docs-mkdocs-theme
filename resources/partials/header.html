@@ -50,6 +50,9 @@
           {% if config.theme.logo_dark %}
           <img class="md-header__logo_dark" src="{{ config.theme.logo_dark | url }}#only-dark" alt="logo" />
           {% endif %}
+          {% if config.site_name %}
+          <h5 style="color: black">{{ config.site_name }}</h5>
+          {% endif %}
         </div>
         <!-- Topic -->
       </div>
