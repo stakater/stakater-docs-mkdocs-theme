@@ -46,7 +46,7 @@ docs_dir: content
 edit_uri: blob/main/content/
 
 nav:
-    - index.md
+  - index.md
 ```
 
 ### 3. Add content in target MkDocs project
@@ -78,26 +78,36 @@ execute the following commands in the root of your target project:
 
 1. Install Python Dependencies:
 
-    ```bash
-    pip3 install -r theme_common/requirements.txt
-    ```
+   ```bash
+   pip3 install -r theme_common/requirements.txt
+   ```
 
 1. Combine Theme Resources:
 
-    ```bash
-    python theme_common/scripts/combine_theme_resources.py theme_common/resources theme_override/resources dist/_theme
-    ```
+   ```bash
+   python theme_common/scripts/combine_theme_resources.py theme_common/resources theme_override/resources dist/_theme
+   ```
 
-    > Above command will output combined theme to `dist/_theme`.
+   > Above command will output combined theme to `dist/_theme`.
 
 1. Produce mkdocs YAML file:
 
-    ```bash
-    python theme_common/scripts/combine_mkdocs_config_yaml.py theme_common/mkdocs.yml theme_override/mkdocs.yml mkdocs.yml
-    ```
+   ```bash
+   python theme_common/scripts/combine_mkdocs_config_yaml.py theme_common/mkdocs.yml theme_override/mkdocs.yml mkdocs.yml
+   ```
 
-    > These scripts will create a combined theme and a `mkdocs.yml` file.
+   > These scripts will create a combined theme and a `mkdocs.yml` file.
 
 Your target project will now have an mkdocs theme. If you want to customise `mkdocs.yml` or theme resources, you can do so by modifying files in `theme_override` folder and running the above scripts again.
 
 Your Dockerfile in the target repo needs to run the same steps to build the combined theme that will be used to build the docs.
+
+Versioning is provided by `theme_override` and can be added to the `mkdocs.yml` when required under:
+
+```extra:
+    version:
+        provider: mike
+        default: latest
+```
+
+It is compiled under the `dist/_theme`
