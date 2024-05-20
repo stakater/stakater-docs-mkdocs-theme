@@ -46,6 +46,12 @@
     .md-nav__link {
         font-size: 0.8rem;
     }
+
+    .md-header__ellipsis{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 
