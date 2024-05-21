@@ -93,3 +93,5 @@ execute the following commands in the root of your target project:
     > These scripts will create a combined theme and a `mkdocs.yml` file.
 
 Your target project will now have an mkdocs theme. If you want to customise `mkdocs.yml` or theme resources, you can do so by modifying files in `theme_override` folder and running the above scripts again.
+
+> Tip: Copy `prepare_theme.sh` file to your project and run it to avoid the above scripts in step 4.
