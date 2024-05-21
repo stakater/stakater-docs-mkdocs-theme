@@ -4,8 +4,6 @@ import sys
 def merge_yaml_files(file1, file2, output_file):
 
     with open(file1, 'r') as f1, open(file2, 'r') as f2:
-        # data1 = yaml.safe_load(f1)
-        # data2 = yaml.safe_load(f2)
         data1 = yaml.load(f1, Loader=yaml.Loader)
         data2 = yaml.load(f2, Loader=yaml.Loader)
         merged_data = merge_dicts(data1, data2)
@@ -14,13 +12,25 @@ def merge_yaml_files(file1, file2, output_file):
         yaml.dump(merged_data, out_file, default_flow_style=False)
 
 def merge_dicts(dict1, dict2):
-    for key, value in dict2.items():
-        if key in dict1 and isinstance(dict1[key], dict) and isinstance(value, dict):
-            dict1[key] = merge_dicts(dict1[key], value)
+    for key in dict2:
+        if key in dict1:
+            if isinstance(dict1[key], dict) and isinstance(dict2[key], dict):
+                merge_dicts(dict1[key], dict2[key])
+            elif isinstance(dict1[key], list) and isinstance(dict2[key], list):
+                dict1[key] = merge_lists(dict1[key], dict2[key])
+            else:
+                dict1[key] = dict2[key]
         else:
-            dict1[key] = value
+            dict1[key] = dict2[key]
     return dict1
-    
+
+def merge_lists(list1, list2):
+    merged_list = list1[:]
+    for item in list2:
+        if item not in merged_list:
+            merged_list.append(item)
+    return merged_list
+
 if __name__ == "__main__":
 
     if len(sys.argv) != 4:

@@ -111,3 +111,5 @@ Versioning is provided by `theme_override` and can be added to the `mkdocs.yml` 
 ```
 
 It is compiled under the `dist/_theme`
+
+> Tip: Copy `prepare_theme.sh` file to your project and run it to avoid the above scripts in step 4.
