@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 
+{% block header %}
+{% include "partials/header.html" %}
+{% endblock %}
+
 {% block footer %}
-<p>Copyright &copy; 2024 Stakater AB – <a href="#__consent">Change cookie settings</a></p>
+{% include "partials/footer.html" %}
 {% endblock %}
 
 {% block outdated %}
-  You're not viewing the latest version.
-  <a href="{{ '../' ~ base_url }}"> 
-    <strong>Click here to go to latest.</strong>
-  </a>
+You're not viewing the latest version.
+<a href="{{ '../' ~ base_url }}">
+  <strong>Click here to go to latest.</strong>
+</a>
 {% endblock %}
