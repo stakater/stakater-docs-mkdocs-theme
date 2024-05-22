@@ -67,6 +67,10 @@
     .header-site-name {
         margin-left: 10px;
      }
+
+    .hover-underline:hover {
+        text-decoration: underline;
+    }
 }
 
 
@@ -149,6 +153,7 @@
     }
 
     .dropdown-menu {
+        height: initial;
         background-color: #131414;
         filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
         border-radius: 8px;
@@ -271,6 +276,7 @@
     }
 
     .dropdown-menu {
+        height: initial;
         background-color: white;
     }
 
