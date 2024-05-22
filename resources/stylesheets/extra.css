@@ -15,6 +15,13 @@
     .md-typeset .note>.admonition-title, .md-typeset .note>summary {
         background-color: #ef7c3030;
     }
+
+    .md-typeset a:focus, .md-typeset a:hover {
+        color: #EF7C30;
+    }
+    .md-nav__link[for]:focus, .md-nav__link[for]:hover, .md-nav__link[href]:focus, .md-nav__link[href]:hover {
+        color: #EF7C30;
+    }
     
     /* search results 'see more' text */
     .md-search-result__more>summary>div {
