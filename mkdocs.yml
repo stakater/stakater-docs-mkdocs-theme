@@ -82,5 +82,6 @@ extra:
 plugins:
   - search
   - glightbox
+  - mermaid2
 
 nav:
