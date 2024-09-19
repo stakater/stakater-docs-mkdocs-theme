@@ -175,7 +175,6 @@
     .dropdown-item-link-text {
         color: white;
         cursor: pointer; 
-        font-size: 14px; 
         font-weight: 400; 
     }
 
@@ -299,7 +298,6 @@
     .dropdown-item-link-text {
         color: black;
         cursor: pointer; 
-        font-size: 14px; 
         font-weight: 400; 
     }
 
