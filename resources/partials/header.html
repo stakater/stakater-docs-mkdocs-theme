@@ -21,6 +21,95 @@
   .md-header--scroll .md-search__form {
     border: none;
   }
+
+  .md-header__external-nav-links {
+    display: none;
+  }
+
+  .md-header__drawer-hamburger-icon {
+    display: none;
+  }
+
+  @media (max-width: 320px) {
+    .md-icon svg {
+      height: 0.8rem;
+      width: 0.8rem;
+    }
+
+    .md-header__title {
+      font-size: 0.7rem;
+    }
+
+    .md-header__logo_light {
+      height: 1.4rem;
+      width: 1.4rem;
+    }
+
+    .md-header__logo_dark {
+      height: 1.4rem;
+      width: 1.4rem;
+    }
+  }
+
+  @media (min-width: 321px) and (max-width: 375px) {
+    .md-header__logo_light {
+      height: 1.4rem;
+      width: 1.4rem;
+    }
+
+    .md-header__logo_dark {
+      height: 1.4rem;
+      width: 1.4rem;
+    }
+  }
+
+  @media (min-width: 376px) and (max-width: 425px) {
+    .md-header__logo_light {
+      height: 1.4rem;
+      width: 1.4rem;
+    }
+
+    .md-header__logo_dark {
+      height: 1.4rem;
+      width: 1.4rem;
+    }
+  }
+
+  @media (min-width: 426px) and (max-width: 768px) {
+    .md-header__contained-nav-links-container {
+      display: none;
+    }
+
+    .md-header__external-nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid lightgray;
+      padding: 4px;
+    }
+
+    .md-header__drawer-hamburger-icon {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .md-header__contained-nav-links-container {
+      display: none;
+    }
+
+    .md-header__external-nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid lightgray;
+      padding: 4px;
+    }
+
+    .md-header__drawer-hamburger-icon {
+      display: flex;
+    }
+  }
 </style>
 
 <!-- Header -->
@@ -36,7 +125,9 @@
     <!-- Button to open drawer -->
     <label class="md-header__button md-icon" for="__drawer">
       {% set icon = config.theme.icon.menu or "material/menu" %}
-      <!-- {% include ".icons/" ~ icon ~ ".svg" %} -->
+      <div class="md-header__drawer-hamburger-icon">
+        {% include ".icons/" ~ icon ~ ".svg" %}
+      </div>
     </label>
 
     <!-- Header title -->
@@ -61,7 +152,10 @@
     </div>
 
     <!-- Nav links -->
-    {% include "partials/nav-links.html" %}
+    <div class="md-header__contained-nav-links-container">
+      {% include "partials/nav-links.html" %}
+    </div>
+
 
     <!-- Color palette toggle -->
     {% if config.theme.palette %}
@@ -84,6 +178,10 @@
     <!-- Search interface -->
     {% include "partials/search.html" %}
     {% endif %}
+  </nav>
+
+  <nav class="md-header__inner md-header__external-nav-links md-grid" aria-label="{{ lang.t('header') }}">
+    {% include "partials/nav-links.html" %}
   </nav>
 
   <!-- Navigation tabs (sticky) -->

@@ -52,10 +52,6 @@
         flex: 3;
     }
 
-    .flex-0-8 {
-        flex: 0.8;
-    }
-
     .margin-left-1 {
         margin-left: 1rem;
     }
@@ -64,21 +60,209 @@
         margin-bottom: 1rem;
     }
 
+    .margin-top-16 {
+        margin-top: 1rem;
+    }
+
     .footer-content-container {
         width: 100%;
         margin: 0 14%;
     }
+
+    .footer-columns-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-copyrights-media-link-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-location-info-container {
+        display: block;
+    }
+
+    .footer-copy-rights-policy-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (min-width: 320px) and (max-width: 375px) {
+        .csa-logo-dark {
+            width: 80px;
+            height: 40px;
+        }
+
+        .csa-logo-dark {
+            width: 80px;
+            height: 40px;
+        }
+
+        .hc-logo-dark {
+            height: 40px;
+            width: 100px;
+        }
+
+        .hc-logo-light {
+            height: 40px;
+            width: 100px;
+        }
+
+        .flex-2,
+        .flex-1 {
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-content-container {
+            margin: 0 5%;
+        }
+
+        .footer-columns-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+
+        .logo-footer-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .collaborations-img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 8px 0;
+        }
+
+        .footer-location-info-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-copyrights-media-link-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-copy-rights-policy-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @media (min-width: 376px) and (max-width: 425px) {
+        .csa-logo-dark {
+            width: 80px;
+            height: 40px;
+        }
+
+        .csa-logo-dark {
+            width: 80px;
+            height: 40px;
+        }
+
+        .hc-logo-dark {
+            height: 40px;
+            width: 100px;
+        }
+
+        .hc-logo-light {
+            height: 40px;
+            width: 100px;
+        }
+
+        .flex-2,
+        .flex-1 {
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-content-container {
+            margin: 0 5%;
+        }
+
+        .footer-columns-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+
+        .logo-footer-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .collaborations-img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 8px 0;
+        }
+
+        .footer-location-info-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-copyrights-media-link-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-copy-rights-policy-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @media (min-width: 426px) and (max-width: 768px) {
+        .md-footer-col-title {
+            font-size: 14px;
+        }
+
+        .md-footer-col-link {
+            font-size: 12px;
+        }
+
+        .margin-bottom-16 {
+            margin-bottom: 0.5rem;
+        }
+    }
 </style>
+
 
 <footer class="md-footer">
     <div class="md-footer__inner mlr-auto" aria-label="{{ lang.t('footer') }}" {{ hidden }}>
         <!-- Footer content container-->
         <div class="footer-content-container">
             <!-- Flex-container with columns -->
-            <div class="display-flex jscc">
+            <div class="footer-columns-container">
                 <!-- Column 1 -->
                 <div class="flex-2">
-                    <div>
+                    <div class="logo-footer-container">
                         {% if config.theme.footer_logo_light %}
                         <img class="md-header__logo_light" src="{{ config.theme.footer_logo_light | url }}#only-light"
                             alt="logo" />
@@ -88,23 +272,30 @@
                         {% endif %}
                     </div>
 
-                    <div class="display-flex">
-                        {% if config.theme.cloud_security_alliance_logo_dark %}
-                        <img src="{{ config.theme.cloud_security_alliance_logo_dark | url }}#only-dark" alt="CSA" />
-                        {% endif %}
-                        {% if config.theme.cloud_security_alliance_logo_light %}
-                        <img src="{{ config.theme.cloud_security_alliance_logo_light | url }}#only-light" alt="CSA" />
-                        {% endif %}
+                    <div class="collaborations-img-container">
+                        <div class="display-flex">
+                            {% if config.theme.cloud_security_alliance_logo_dark %}
+                            <img class="csa-logo-dark"
+                                src="{{ config.theme.cloud_security_alliance_logo_dark | url }}#only-dark" alt="CSA" />
+                            {% endif %}
+                            {% if config.theme.cloud_security_alliance_logo_light %}
+                            <img class="csa-logo-light"
+                                src="{{ config.theme.cloud_security_alliance_logo_light | url }}#only-light"
+                                alt="CSA" />
+                            {% endif %}
 
-                        {% if config.theme.hippa_compliant_logo_dark %}
-                        <img src="{{ config.theme.hippa_compliant_logo_dark | url }}#only-dark" alt="HC" />
-                        {% endif %}
-                        {% if config.theme.hippa_compliant_logo_light %}
-                        <img src="{{ config.theme.hippa_compliant_logo_light | url }}#only-light" alt="HC" />
-                        {% endif %}
+                            {% if config.theme.hippa_compliant_logo_dark %}
+                            <img class="hc-logo-dark" src="{{ config.theme.hippa_compliant_logo_dark | url }}#only-dark"
+                                alt="HC" />
+                            {% endif %}
+                            {% if config.theme.hippa_compliant_logo_light %}
+                            <img class="hc-logo-light"
+                                src="{{ config.theme.hippa_compliant_logo_light | url }}#only-light" alt="HC" />
+                            {% endif %}
+                        </div>
                     </div>
 
-                    <div class="display-block">
+                    <div class="footer-location-info-container">
                         <p class="md-footer-col-title"><b>
                                 Org#
                             </b>
@@ -116,7 +307,7 @@
                         </p>
                     </div>
 
-                    <div class="display-block">
+                    <div class="footer-location-info-container">
                         <p class="md-footer-col-title"><b>
 
                                 Address
@@ -269,10 +460,10 @@
             </div>
 
             <!-- Copy Rights and Social Media Links -->
-            <div class="display-flex jscsb">
+            <div class="footer-copyrights-media-link-container">
                 <!-- Column 1 -->
                 <div class="flex-3">
-                    <div class="display-flex jscfs items-center">
+                    <div class="footer-copy-rights-policy-container display-flex jscfs items-center">
                         <div>
                             <p class="md-footer-base-content">
                                 <b>
@@ -316,7 +507,7 @@
                 </div> -->
                 <!-- <div class="flex-1"></div>
                 <div class="flex-1"></div> -->
-                <div class="flex-1">
+                <div class="flex-1 margin-top-16">
                     <!-- Social Links -->
                     <!-- vale off -->
                     <div class="display-flex jscsa">

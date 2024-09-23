@@ -105,6 +105,226 @@
         font-weight: 600;
         color: #EA7845;
     }
+
+    .dropdown-arrow-sm {
+        display: none;
+    }
+
+    .dropdown-arrow {
+        display: flex;
+    }
+
+    @media (max-width: 320px) {
+        .custom-anchor {
+            font-size: 8px;
+        }
+
+        .md-header-ul-li {
+            margin-right: 12px;
+        }
+
+        .dropdown-arrow {
+            display: none;
+        }
+
+        .dropdown-arrow-sm {
+            display: flex;
+        }
+
+        /* dropdown styles */
+        .offerings-dropdown {
+            height: fit-content;
+            width: auto;
+        }
+
+        .dropdown-content-container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            width: max-content;
+        }
+
+        .dropdown-content-column {
+            flex: 1;
+            float: left;
+            width: 90%;
+            padding: 0px;
+        }
+
+        .dropdown-content-column-title {
+            font-size: 8px;
+            font-weight: 600;
+            color: #EA7845;
+        }
+
+        .dropdown-content-anchor-container {
+            margin: 0.3rem 0;
+        }
+
+        .dropdown-item-link-text {
+            font-size: 8px;
+        }
+
+        .dropdown-content-dev-links {
+            width: 100%;
+            margin: 0.2rem 0;
+            padding: 0px;
+        }
+
+        .dropdown-content-dev-links-anchor-container {
+            margin: 0.5rem 0;
+        }
+
+        .dropdown-content-dev-links-anchor {
+            font-size: 10px;
+        }
+    }
+
+    @media (min-width: 321px) and (max-width: 375px) {
+        .custom-anchor {
+            font-size: 8px;
+        }
+
+        .dropdown-arrow {
+            display: none;
+        }
+
+        .dropdown-arrow-sm {
+            display: flex;
+        }
+
+        /* dropdown styles */
+        .offerings-dropdown {
+            height: fit-content;
+            width: auto;
+        }
+
+        .dropdown-content-container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            width: max-content;
+        }
+
+        .dropdown-content-column {
+            flex: 1;
+            float: left;
+            width: 90%;
+            padding: 0px;
+        }
+
+        .dropdown-content-column-title {
+            font-size: 10px;
+            font-weight: 600;
+            color: #EA7845;
+        }
+
+        .dropdown-content-anchor-container {
+            margin: 0.3rem 0;
+        }
+
+        .dropdown-item-link-text {
+            font-size: 8px;
+        }
+
+        .dropdown-content-dev-links {
+            width: 100%;
+            margin: 0.2rem 0;
+            padding: 0px;
+        }
+
+        .dropdown-content-dev-links-anchor-container {
+            margin: 0.5rem 0;
+        }
+
+        .dropdown-content-dev-links-anchor {
+            font-size: 10px;
+        }
+    }
+
+    @media (min-width: 376px) and (max-width: 425px) {
+        .custom-anchor {
+            font-size: 10px;
+        }
+
+        .dropdown-arrow {
+            display: none;
+        }
+
+        .dropdown-arrow-sm {
+            display: flex;
+        }
+
+        /* dropdown styles */
+        .offerings-dropdown {
+            height: fit-content;
+            width: auto;
+        }
+
+        .dropdown-content-container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            width: max-content;
+        }
+
+        .dropdown-content-column {
+            flex: 1;
+            float: left;
+            width: 90%;
+            padding: 0px;
+        }
+
+        .dropdown-content-column-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #EA7845;
+        }
+
+        .dropdown-content-anchor-container {
+            margin: 0.5rem 0;
+        }
+
+        .dropdown-item-link-text {
+            font-size: 10px;
+        }
+
+        .dropdown-content-dev-links {
+            width: 100%;
+            margin: 0.2rem 0;
+            padding: 0px;
+        }
+
+        .dropdown-content-dev-links-anchor-container {
+            margin: 0.5rem 0;
+        }
+
+        .dropdown-content-dev-links-anchor {
+            font-size: 12px;
+        }
+    }
+
+    @media (min-width: 426px) and (max-width: 768px) {
+        .custom-anchor {
+            font-size: 10px;
+        }
+
+        .dropdown-arrow {
+            display: none;
+        }
+
+        .dropdown-arrow-sm {
+            display: flex;
+        }
+
+        .offerings-dropdown {
+            width: auto;
+        }
+
+        .dropdown-item-link-text {
+            font-size: 14px;
+        }
+    }
 </style>
 
 
@@ -115,9 +335,14 @@
 
         <li class="dropdown">
             <a class="custom-anchor" href="#">Offerings
-                &nbsp;<span>
+                &nbsp;
+                <span class="dropdown-arrow">
                     {% include "assets/svg/down-arrow.svg" %}
-                </span></a>
+                </span>
+                <span class="dropdown-arrow-sm">
+                    {% include "assets/svg/down-arrow-sm.svg" %}
+                </span>
+            </a>
             <div class="dropdown-menu dropdown-content offerings-dropdown">
                 <div class="dropdown-content-container">
                     <!-- Column 1 -->
