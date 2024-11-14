@@ -1,12 +1,24 @@
-import shutil
+import argparse
 import os
-import sys
+import shutil
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-s', '--source', required=True, help='the source directory path')
+parser.add_argument('-ov', '--override', required=True, help='the override from directory path')
+parser.add_argument('-o', '--output', required=True, help='the output directory path')
+parser.add_argument('-skiprmtree', '--skiprmtree', required=False, action='store_true', help='skip removal of tree when copying submodule')
+args = parser.parse_args()
 
 def copy_submodule(source_dir, destination_dir):
     if os.path.exists(destination_dir):
-        shutil.rmtree(destination_dir)
-    shutil.copytree(source_dir, destination_dir)
-    print("Submodule copied to destination.")
+        if args.skiprmtree:
+            print(f'Skipping removal of {destination_dir}.')
+            shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
+        else:
+            shutil.rmtree(destination_dir)
+            print(f'{destination_dir} removed.')
+            shutil.copytree(source_dir, destination_dir)
+    print(f'Submodule copied to {destination_dir}.')
 
 def override_resources(theme_override_dir, output_to_dir):
     source_override_dir = theme_override_dir
@@ -21,11 +33,8 @@ def override_resources(theme_override_dir, output_to_dir):
     print("Resources overridden.")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: python combine_theme_resources.py <source_dir_path> <override_from_dir_path> <output_dir_path>")
-        sys.exit(1)
-    source_dir_path = sys.argv[1]
-    overridefrom_dir_path = sys.argv[2]
-    output_dir_path = sys.argv[3]
+    source_dir_path = args.source
+    overridefrom_dir_path = args.override
+    output_dir_path = args.output
     copy_submodule(source_dir_path,output_dir_path)
     override_resources(overridefrom_dir_path, output_dir_path)
