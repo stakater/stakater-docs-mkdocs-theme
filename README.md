@@ -112,4 +112,8 @@ Versioning is provided by `theme_override` and can be added to the `mkdocs.yml` 
 
 It is compiled under the `dist/_theme`
 
-> Tip: Copy the [`prepare_theme.sh`](./prepare_theme.sh) file to your project and run it to avoid having to remember to run all commands in step 4. Use the [`prepare_theme_pr.sh`](./prepare_theme_pr.sh) in your pull request builds to generate pull request specific overrides.
+> [!NOTE]
+> Copy the [`prepare_theme.sh`](./prepare_theme.sh) file to your project and run it to avoid having to remember to run all commands in step 4.
+>
+> [!NOTE]
+> Use the [`prepare_theme_pr.sh`](./prepare_theme_pr.sh) in your pull request builds to generate pull request specific overrides.
