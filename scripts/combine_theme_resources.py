@@ -13,11 +13,10 @@ def copy_submodule(source_dir, destination_dir):
     if os.path.exists(destination_dir):
         if args.skiprmtree:
             print(f'Skipping removal of {destination_dir}.')
-            shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
         else:
             shutil.rmtree(destination_dir)
             print(f'{destination_dir} removed.')
-            shutil.copytree(source_dir, destination_dir)
+    shutil.copytree(source_dir, destination_dir, dirs_exist_ok=args.skiprmtree)
     print(f'Submodule copied to {destination_dir}.')
 
 def override_resources(theme_override_dir, output_to_dir):
