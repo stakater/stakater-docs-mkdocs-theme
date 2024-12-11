@@ -10,7 +10,7 @@ theme:
   name: material
   font:
     text: Space Grotesk
-    code: Space Grotesk
+    code: Monospace
     # To add custom stylesheet to _theme and acts as a build-directory path resolver
   custom_dir: dist/_theme
   logo_light: assets/images/logo-light.png
