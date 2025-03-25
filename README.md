@@ -1,4 +1,4 @@
-# stakater-docs-mkdocs-theme
+# `stakater-docs-mkdocs-theme`
 
 This project serves as a shared MkDocs theme for all the Stakater MkDocs projects. By integrating this repository as a git submodule into your project, you can utilize the common theme and take updates.
 
