@@ -10,7 +10,7 @@ Python 3 environment
 
 ### 1. Import as git submodule
 
-Add this repo as a submodule to your target Mkdocs project at the `theme_common` path:
+Add this repo as a submodule to your target `mkdocs` project at the `theme_common` path:
 
 ```sh
 git submodule add git@github.com:stakater/stakater-docs-mkdocs-theme.git theme_common
@@ -51,7 +51,7 @@ nav:
 
 ### 3. Add content in target MkDocs project
 
-In this project, default mkdocs documentation folder is set to `content`. If you want to override that setting, you can change following properties in `theme_override/mkdocs.yml`:
+In this project, default `mkdocs` documentation folder is set to `content`. If you want to override that setting, you can change following properties in `theme_override/mkdocs.yml`:
 
 - `docs_dir`
 - `edit_uri`
@@ -60,7 +60,7 @@ Add your content and then you can link it in `theme_override/mkdocs.yml` by over
 
 - `nav`
 
-You can visit MkDocs official documentation to find out how to define `nav` in `mkdocs.yml` file.
+You can visit `mkdocs` official documentation to find out how to define `nav` in `mkdocs.yml` file.
 
 Target project's directory structure would look like this after adding `content` dir:
 
@@ -90,7 +90,7 @@ execute the following commands in the root of your target project:
 
    > Above command will output combined theme to `dist/_theme`.
 
-1. Produce mkdocs YAML file:
+1. Produce `mkdocs` YAML file:
 
    ```bash
    python theme_common/scripts/combine_mkdocs_config_yaml.py theme_common/mkdocs.yml theme_override/mkdocs.yml mkdocs.yml
@@ -98,7 +98,7 @@ execute the following commands in the root of your target project:
 
    > These scripts will create a combined theme and a `mkdocs.yml` file.
 
-Your target project will now have an mkdocs theme. If you want to customise `mkdocs.yml` or theme resources, you can do so by modifying files in `theme_override` folder and running the above scripts again.
+Your target project will now have an `mkdocs` theme. If you want to customise `mkdocs.yml` or theme resources, you can do so by modifying files in `theme_override` folder and running the above scripts again.
 
 Your Dockerfile in the target repo needs to run the same steps to build the combined theme that will be used to build the docs.
 
