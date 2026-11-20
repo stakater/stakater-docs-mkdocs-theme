@@ -14,3 +14,18 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   <strong>Click here to go to the latest version.</strong>
 </a>
 {% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<!-- Reo.dev (SA-9624): loads only after the visitor consents to the "reo" cookie.
+     The consent form reloads the page on Accept/Reject, so a page-load check is sufficient. -->
+<script>
+  (function () {
+    var consent = typeof __md_get === "function" ? __md_get("__consent") : null;
+    if (!consent || consent.reo !== true) return;
+    if (window.__stakaterReoLoaded || document.querySelector('script[src*="static.reo.dev/"]')) return;
+    window.__stakaterReoLoaded = true;
+    !function(){var e,t,n;e="f24f9060b21bf76",t=function(){Reo.init({clientID:"f24f9060b21bf76"})},(n=document.createElement("script")).src="https://static.reo.dev/"+e+"/reo.js",n.defer=!0,n.onload=t,document.head.appendChild(n)}();
+  })();
+</script>
+{% endblock %}
