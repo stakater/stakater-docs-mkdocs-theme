@@ -17,15 +17,29 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 
 {% block scripts %}
 {{ super() }}
+{% if config.extra.consent %}
 <!-- Reo.dev (SA-9624): loads only after the visitor consents to the "reo" cookie.
      The consent form reloads the page on Accept/Reject, so a page-load check is sufficient. -->
 <script>
   (function () {
-    var consent = typeof __md_get === "function" ? __md_get("__consent") : null;
-    if (!consent || consent.reo !== true) return;
-    if (window.__stakaterReoLoaded || document.querySelector('script[src*="static.reo.dev/"]')) return;
-    window.__stakaterReoLoaded = true;
-    !function(){var e,t,n;e="f24f9060b21bf76",t=function(){Reo.init({clientID:"f24f9060b21bf76"})},(n=document.createElement("script")).src="https://static.reo.dev/"+e+"/reo.js",n.defer=!0,n.onload=t,document.head.appendChild(n)}();
+    var consent = __md_get("__consent");
+    var form = document.forms.consent;
+
+    // Visitors who consented before Reo was added are asked once more,
+    // with the same default as a fresh visit. Material only stores ticked
+    // cookies, so a separate flag records that the Reo question was answered.
+    if (consent && !consent.reo && !__md_get("__consent_reo") && form.elements.reo) {
+      form.elements.reo.checked = true;
+      location.hash = "#__consent";
+    }
+    ["submit", "reset"].forEach(function (type) {
+      form.addEventListener(type, function () { __md_set("__consent_reo", true); });
+    });
+
+    if (consent && consent.reo) {
+      !function(){var e,t,n;e="f24f9060b21bf76",t=function(){Reo.init({clientID:"f24f9060b21bf76"})},(n=document.createElement("script")).src="https://static.reo.dev/"+e+"/reo.js",n.defer=!0,n.onload=t,document.head.appendChild(n)}();
+    }
   })();
 </script>
+{% endif %}
 {% endblock %}

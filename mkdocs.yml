@@ -76,13 +76,11 @@ extra:
       - manage
     description: >-
       We use cookies to recognise your repeated visits and preferences, to
-      measure whether our documentation helps you find what you need, and
-      (with Reo.dev) to understand which companies use our documentation. These
-      only run with your consent. See our privacy policy:
-      https://www.stakater.com/privacy-policy/#cookies
+      measure whether our documentation helps you find what you need, and to
+      understand which companies use our documentation. These only run with
+      your consent. See our
+      <a href="https://www.stakater.com/privacy-policy/#cookies">privacy policy</a>.
     cookies:
-      analytics: Google Analytics
-      github: GitHub
       reo: Reo.dev
 plugins:
   - search
