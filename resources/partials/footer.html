@@ -15,6 +15,10 @@
         display: flex;
     }
 
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+
     .jscfs {
         justify-content: flex-start;
     }
@@ -87,6 +91,19 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
+    }
+
+    /* On narrow screens, put "Cookie settings" on its own line so no divider
+       is left hanging at the end of the first line */
+    @media (max-width: 375px) {
+        /* Outranks the colour-scheme .vertical-divider rules in extra.css */
+        .md-footer .vertical-divider.footer-cookie-divider {
+            display: none;
+        }
+
+        .footer-cookie-link {
+            flex-basis: 100%;
+        }
     }
 
     /* Media Queries for Responsiveness */
@@ -430,7 +447,7 @@
                                 </b>
                             </p>
                         </div>
-                        <div class="display-flex margin-left-1">
+                        <div class="display-flex flex-wrap margin-left-1">
                             <a href="https://www.stakater.com/privacy-policy" class="md-footer-base-content">
                                 <b>
                                     Privacy Policy
@@ -444,6 +461,16 @@
                                     Terms of Use
                                 </b>
                             </a>
+                            {% if config.extra.consent %}
+                            <p class="vertical-divider footer-cookie-divider">
+                                |
+                            </p>
+                            <a href="#__consent" class="md-footer-base-content footer-cookie-link">
+                                <b>
+                                    Cookie settings
+                                </b>
+                            </a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

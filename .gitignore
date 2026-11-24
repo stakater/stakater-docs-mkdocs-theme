@@ -1,3 +1,9 @@
-styles
+# Vale packages are synced in CI; only the repo-local Theme vocabulary is tracked
+styles/*
+!styles/config/
+styles/config/*
+!styles/config/vocabularies/
+styles/config/vocabularies/*
+!styles/config/vocabularies/Theme/
 
 venv/
